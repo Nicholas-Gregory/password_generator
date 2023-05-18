@@ -42,23 +42,23 @@ function generatePassword() {
   // Generate array of characters that will be randomly selected from during password generation
   var characters = [];
   if (characterClasses[0]) {
-    characters.concat(lowercase);
+    characters = characters.concat(lowercase);
   }
   if (characterClasses[1]) {
-    characters.concat(uppercase);
+    characters = characters.concat(uppercase);
   }
   if (characterClasses[2]) {
-    characters.concat(numeric);
+    characters = characters.concat(numeric);
   }
   if (characterClasses[3]) {
-    characters.concat(special);
+    characters = characters.concat(special);
   }
 
   // Generate the password at the selected length using the selected classes of characters
   var password = "";
   for (var i = 0; i < length; i++) {
     var newCharacter = characters[Math.floor(Math.random() * characters.length)];
-    password.concat(newCharacter);
+    password = password.concat(newCharacter);
   }
   // Make another pass through the generated password to make sure at least one of the characters from the chosen classes is represented
   var containsLowercase = false;
@@ -108,7 +108,7 @@ function generatePassword() {
     replace(password, index, lowercase[Math.floor(Math.random() * lowercase.length)]);
   }
   if (!containsUppercase && characterClasses[1]) {
-    index = Math.floor(math.random() * length);
+    index = Math.floor(Math.random() * length);
     while (usedIndices.includes(index)) {
       index = Math.floor(Math.random() * length);
     }
@@ -144,7 +144,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
