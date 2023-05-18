@@ -1,4 +1,3 @@
-// Assignment code here
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var uppercase = lowercase.join().toUpperCase().split(",");
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -97,7 +96,7 @@ function generatePassword() {
       }
     }
   }
-
+  // Replace a random character with one from the desired class, making sure we don't overwrite the changes we already made.
   var usedIndices = [];
   if (!containsLowercase && characterClasses[0]) {
     var index = Math.floor(Math.random() * length);
