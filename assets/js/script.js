@@ -26,7 +26,7 @@ function replace(string, index, replacementChar) {
 function generatePassword() {
   // Ask user for desired length of password, making sure that it is within the required range
   var length = promptLength();
-  while (!(length >= 8 && length <= 128)) {
+  while (!(length >= 8 && length <= 128) || !isNaN(length)) {
     alert("Password length must be between 8 and 128 characters!")
     length = promptLength();
   }
